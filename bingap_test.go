@@ -1,4 +1,4 @@
-package codility
+package main
 
 import "testing"
 

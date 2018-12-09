@@ -1,4 +1,4 @@
-package codility
+package main
 
 // Returns max binary gap of the number
 func maxBinaryGap(n int) int {
