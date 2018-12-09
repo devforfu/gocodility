@@ -1,4 +1,4 @@
-package main
+package bingap
 
 import "testing"
 
@@ -14,7 +14,7 @@ func TestBinaryGap(t *testing.T) {
         {529, 4},
     }
     for _, test := range tests {
-        gap := maxBinaryGap(test.val)
+        gap := MaxBinaryGap(test.val)
         if  gap != test.gap {
             t.Errorf("%v != %v", gap, test.gap)
         }

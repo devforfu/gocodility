@@ -1,7 +1,7 @@
-package main
+package bingap
 
 // Returns max binary gap of the number
-func maxBinaryGap(n int) int {
+func MaxBinaryGap(n int) int {
     var mask int = 1
     var currGap, maxGap int = 0, 0
     inGap := false
