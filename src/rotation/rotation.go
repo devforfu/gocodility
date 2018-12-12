@@ -1,12 +1,25 @@
 package rotation
 
-// Rotates int array k elements right
-func Rotate(a []int, k int) []int {
-    n := len(a)
-    if k > n { k = k % n }
-    if k == 0 { return a }
-    buf := make([]int, n)
-    copy(buf[:k+1], a[n-k:])
-    copy(buf[n-k-1:], a[:k+1])
-    return buf
+// Rotates int array k positions right
+func RotateRight(arr []int, k int) []int {
+    return rotate(arr, k, true)
+}
+
+// Rotates int array k positions left
+func RotateLeft(arr []int, k int) []int {
+    return rotate(arr, k, false)
+}
+
+func rotate(arr []int, k int, right bool) []int {
+    n := len(arr)
+    if k >= n { k = k % n }
+    if k == 0 || k < 0 { return arr }
+    //if right {
+    //    arr = append(arr[n - k:], arr[:n - k]...)
+    //} else {
+    //    arr = append(arr[k:], arr[:k]...)
+    //}
+    if right { k = n - k }
+    arr = append(arr[k:], arr[:k]...)
+    return arr
 }
