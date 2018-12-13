@@ -4,8 +4,14 @@ var impactFactor = map[int32]int {'A': 1, 'C': 2, 'G': 3, 'T': 4}
 
 
 // Find the minimal nucleotide from a range of sequence DNA
-func QueryGenomicRange(s string, p []int, q []int) []int {
-    return nil
+func QueryGenomicRange(s string, ps []int, qs []int) []int {
+    counts := countLetters(s)
+    results := []int{}
+    for i := 0; i < len(ps); i++ {
+        impact := computeImpact(s, counts, ps[i], qs[i])
+        results = append(results, impact)
+    }
+    return results
 }
 
 // Counts each letter presence for each prefix of string s
